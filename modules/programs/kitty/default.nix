@@ -9,6 +9,11 @@ let
     exec ${pkgs.tmux}/bin/tmux new-session -A -s main
   '';
 
+  kittyTmuxNewSession = pkgs.writeShellScript "kitty-tmux-new-session" ''
+    unset TMUX TMUX_PANE
+    exec ${pkgs.tmux}/bin/tmux new-session
+  '';
+
   tmuxSessionPicker = pkgs.writeTextFile {
     name = "tmux-session-picker.zsh";
     executable = true;
@@ -122,6 +127,7 @@ in
       "cmd+q" = "quit";
       "cmd+c" = "copy_or_noop";
       "cmd+v" = "paste_from_clipboard";
+      "cmd+n" = "launch --type=os-window --cwd=current ${kittyTmuxNewSession}";
       "shift+enter" = "send_text all \\x1b[13;2u";
       "cmd+'" = "send_text all \\x11w";
       "cmd+o" = "send_text all \\x11[";
