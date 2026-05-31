@@ -54,14 +54,6 @@ let
     ]
   );
 
-  optionalPackage =
-    path:
-    let
-      package = lib.attrByPath path null pkgs;
-    in
-    lib.optional (package != null) package;
-
-  optionalPackages = paths: lib.unique (lib.concatMap optionalPackage paths);
 in
 {
   programs.neovim = {
@@ -98,22 +90,20 @@ in
       vim-fugitive
     ];
 
-    extraPackages = optionalPackages [
-      [ "ripgrep" ]
-      [ "fd" ]
-      [ "fzf" ]
-      [ "stylua" ]
-      [ "prettier" ]
-      [ "deno" ]
-      [ "gopls" ]
-      [ "zls" ]
-      [ "ruby-lsp" ]
-      [ "rubyPackages" "ruby-lsp" ]
-      [ "vtsls" ]
-      [ "tailwindcss-language-server" ]
-      [ "vscode-langservers-extracted" ]
-      [ "vscode-eslint-language-server" ]
-      [ "yaml-language-server" ]
+    extraPackages = with pkgs; [
+      ripgrep
+      fd
+      fzf
+      stylua
+      prettier
+      deno
+      gopls
+      zls
+      ruby-lsp
+      vtsls
+      tailwindcss-language-server
+      vscode-langservers-extracted
+      yaml-language-server
     ];
   };
 
