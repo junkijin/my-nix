@@ -5,12 +5,10 @@
     enable = true;
 
     initContent = ''
-      if [[ -o interactive ]]; then
-        if [[ -n "$ZSH_NO_AUTO_FISH" ]]; then
-          unset ZSH_NO_AUTO_FISH
-        else
-          exec fish
-        fi
+      # Only auto-switch the initial login zsh to fish.
+      # This keeps an explicitly started interactive `zsh` as zsh.
+      if [[ -o interactive && -o login ]]; then
+        exec fish
       fi
     '';
   };
