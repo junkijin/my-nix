@@ -1,0 +1,1 @@
+-- Plugins are installed by Home Manager in nvim/default.nix.
