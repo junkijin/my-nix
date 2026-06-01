@@ -96,6 +96,7 @@ in
       fzf
       stylua
       prettier
+      oxfmt
       deno
       gopls
       zls

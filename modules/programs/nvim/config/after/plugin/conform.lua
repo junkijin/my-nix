@@ -1,3 +1,11 @@
+local util = require("conform.util")
+
+local oxfmt_config_files = {
+	".oxfmtrc.json",
+	".oxfmtrc.jsonc",
+	"oxfmt.config.ts",
+}
+
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 vim.api.nvim_create_autocmd("BufWritePre", {
 	group = vim.api.nvim_create_augroup("my.conform", {}),
@@ -9,14 +17,18 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
-		javascript = { "prettier" },
-		javascriptreact = { "prettier" },
-		typescript = { "prettier" },
-		typescriptreact = { "prettier" },
+		javascript = { "oxfmt", "prettier", stop_after_first = true },
+		javascriptreact = { "oxfmt", "prettier", stop_after_first = true },
+		typescript = { "oxfmt", "prettier", stop_after_first = true },
+		typescriptreact = { "oxfmt", "prettier", stop_after_first = true },
 	},
 	formatters = {
+		oxfmt = {
+			condition = util.root_file(oxfmt_config_files),
+			cwd = util.root_file(oxfmt_config_files),
+		},
 		prettier = {
-			condition = require("conform.util").root_file({
+			condition = util.root_file({
 				".prettierrc",
 				".prettierrc.json",
 				".prettierrc.yml",
