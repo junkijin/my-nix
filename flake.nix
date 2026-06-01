@@ -13,7 +13,11 @@
   outputs =
     { nixpkgs, home-manager, ... }:
     let
-      system = "aarch64-darwin";
+      profiles = {
+        work = import ./profiles/work.nix;
+        personal = import ./profiles/personal.nix;
+      };
+
       piCodingAgentOverlay =
         _final: prev:
         let
@@ -67,21 +71,29 @@
               '';
             });
         };
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ piCodingAgentOverlay ];
-      };
+      mkPkgs =
+        system:
+        import nixpkgs {
+          inherit system;
+          overlays = [ piCodingAgentOverlay ];
+        };
+
+      mkHomeConfiguration =
+        profile:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = mkPkgs profile.system;
+
+          modules = [ ./home.nix ];
+
+          extraSpecialArgs = {
+            inherit profile;
+          };
+        };
     in
     {
-      homeConfigurations."junkijin" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+      homeConfigurations = {
+        work-mac = mkHomeConfiguration profiles.work;
+        personal-mac = mkHomeConfiguration profiles.personal;
       };
     };
 }

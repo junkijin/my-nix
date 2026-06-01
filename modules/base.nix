@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, profile, ... }:
 
 {
-  home.username = "junkijin";
-  home.homeDirectory = "/Users/junkijin";
+  home.username = profile.username;
+  home.homeDirectory = profile.homeDirectory;
 
   home.stateVersion = "26.05";
 

@@ -1,10 +1,7 @@
-{ ... }:
+{ profile, ... }:
 
 let
-  versionControlUser = {
-    name = "Junki Jin";
-    email = "jin@junki.dev";
-  };
+  versionControlUser = profile.git;
 in
 {
   programs.git = {
