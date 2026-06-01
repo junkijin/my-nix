@@ -21,6 +21,8 @@ let
       #!${pkgs.zsh}/bin/zsh
       set -euo pipefail
 
+      unset TMUX TMUX_PANE
+
       TMUX_BIN="${pkgs.tmux}/bin/tmux"
       FZF_BIN="${pkgs.fzf}/bin/fzf"
       TAIL_BIN="${pkgs.coreutils}/bin/tail"
@@ -128,6 +130,7 @@ in
       "cmd+c" = "copy_or_noop";
       "cmd+v" = "paste_from_clipboard";
       "cmd+n" = "launch --type=os-window --cwd=current ${kittyTmuxNewSession}";
+      "shift+cmd+n" = "launch --type=os-window --cwd=current ${tmuxSessionPicker}";
       "shift+enter" = "send_text all \\x1b[13;2u";
       "cmd+'" = "send_text all \\x11w";
       "cmd+o" = "send_text all \\x11[";
