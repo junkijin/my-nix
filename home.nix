@@ -7,12 +7,12 @@
 
 {
   imports = [
-    ./modules/fish.nix
-    ./modules/gh.nix
-    ./modules/ghostty.nix
-    ./modules/git.nix
-    ./modules/neovim.nix
-    ./modules/pi-coding-agent.nix
+    ./modules/ai.nix
+    ./modules/editor.nix
+    ./modules/fonts.nix
+    ./modules/shell.nix
+    ./modules/terminal.nix
+    ./modules/vcs.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -23,13 +23,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-    pkgs.jetbrains-mono
-  ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -68,8 +61,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.nix-your-shell.enable = true;
-
-  fonts.fontconfig.enable = true;
 }
