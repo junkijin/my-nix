@@ -7,6 +7,7 @@
     ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/neovim.nix
+    ./modules/pi-coding-agent.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
