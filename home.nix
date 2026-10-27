@@ -4,6 +4,7 @@
   imports = [
     ./modules/fish.nix
     ./modules/gh.nix
+    ./modules/ghostty.nix
     ./modules/git.nix
   ];
 
