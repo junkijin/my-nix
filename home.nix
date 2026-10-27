@@ -6,6 +6,7 @@
     ./modules/gh.nix
     ./modules/ghostty.nix
     ./modules/git.nix
+    ./modules/neovim.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
