@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
+		nix = { "nixfmt" },
 		javascript = { "oxfmt", "prettier", stop_after_first = true },
 		javascriptreact = { "oxfmt", "prettier", stop_after_first = true },
 		typescript = { "oxfmt", "prettier", stop_after_first = true },

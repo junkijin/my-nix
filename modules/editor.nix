@@ -15,6 +15,8 @@
       pkgs.fzf # fzf-lua
       pkgs.ripgrep # fzf-lua live_grep, grepprg
       pkgs.tree-sitter # nvim-treesitter :TSUpdate
+      pkgs.nixfmt # conform.nvim
+      pkgs.stylua # conform.nvim
     ];
   };
 }
