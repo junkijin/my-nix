@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -68,4 +73,3 @@
 
   fonts.fontconfig.enable = true;
 }
-

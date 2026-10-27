@@ -9,20 +9,27 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }: {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Junkis-MacBook-Pro
-    darwinConfigurations."Junkis-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-      modules = [
-        ./configuration.nix
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users."junkijin" = ./home.nix;
-        }
-      ];
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+    }:
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#Junkis-MacBook-Pro
+      darwinConfigurations."Junkis-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users."junkijin" = ./home.nix;
+          }
+        ];
+      };
     };
-  };
 }

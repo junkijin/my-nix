@@ -4,8 +4,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
-	pkgs.vim 
-	pkgs.ghostty-bin
+    pkgs.vim
+    pkgs.ghostty-bin
   ];
 
   # Necessary for using flakes on this system.
@@ -29,7 +29,7 @@
 
   # Set user
   users.users.junkijin = {
-	name = "junkijin";
-	home = "/Users/junkijin";
+    name = "junkijin";
+    home = "/Users/junkijin";
   };
 }

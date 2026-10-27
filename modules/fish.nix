@@ -2,7 +2,7 @@
 
 {
   programs.fish = {
-  	enable = true;
+    enable = true;
 
     interactiveShellInit = ''
       set -U fish_greeting
