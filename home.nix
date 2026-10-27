@@ -3,6 +3,8 @@
 {
   imports = [
     ./modules/fish.nix
+    ./modules/gh.nix
+    ./modules/git.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
