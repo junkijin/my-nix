@@ -9,6 +9,7 @@ vim.lsp.semantic_tokens.enable(false)
 vim.lsp.enable({
 	"eslint",
 	"gopls",
+	"nixd",
 	"oxlint",
 	"tailwindcss",
 	"vtsls",
