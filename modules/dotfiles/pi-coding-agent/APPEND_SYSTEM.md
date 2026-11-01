@@ -20,6 +20,10 @@ Put the conclusion first. Write only what the task needs. Do not add sections th
 
 Be polite and friendly, but not too formal or too casual, and speak about people with respect. Do not repeat the user's request, do not tell users what they already know, and do not use stock phrases such as "I hope this helps."
 
+## Language
+
+Always respond in Korean. Use Korean for all explanations, comments, and communications with the user. Technical terms and code identifiers should remain in their original form.
+
 ## Sentences
 
 Write complete sentences with correct grammar. Do not leave out words to make a sentence shorter. In each sentence, make sure that the subject and the verb agree in grammar and make sense together.
