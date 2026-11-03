@@ -91,6 +91,24 @@
 
     plugins.web-devicons.enable = true;
 
+    plugins.oil = {
+      enable = true;
+      settings.keymaps = {
+        "<C-h>" = false;
+        "<C-l>" = false;
+        "`" = false;
+        "~" = false;
+      };
+    };
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "-";
+        action = "<cmd>Oil<cr>";
+      }
+    ];
+
     extraPackages = [
       pkgs.fzf # fzf-lua
       pkgs.ripgrep # fzf-lua live_grep, grepprg
