@@ -4,6 +4,10 @@
   programs.nixvim = {
     enable = true;
 
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+
     opts = {
       termguicolors = true;
       background = "dark";
@@ -21,9 +25,7 @@
 
     highlightOverride.BqfPreviewBorder.link = "Ignore";
 
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
+    plugins.web-devicons.enable = true;
 
     plugins.lualine = {
       enable = true;
@@ -88,8 +90,6 @@
         ];
       };
     };
-
-    plugins.web-devicons.enable = true;
 
     plugins.oil = {
       enable = true;
