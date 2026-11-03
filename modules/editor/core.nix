@@ -8,6 +8,11 @@
 
   luaLoader.enable = true;
 
+  performance.byteCompileLua = {
+    enable = true;
+    plugins = true;
+  };
+
   # Must precede every `<leader>` mapping, including the ones plugins define.
   globals.mapleader = " ";
 
