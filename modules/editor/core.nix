@@ -1,5 +1,5 @@
 # Neovim itself: settings that don't belong to any one feature.
-{ lib, pkgs, ... }:
+{ lib, ... }:
 
 {
   viAlias = true;
@@ -25,13 +25,6 @@
 
   # Plain Lua script with no plugin dependency, sourced from runtimepath `plugin/`.
   extraFiles."plugin/restore-cursor.lua".source = ./plugin/restore-cursor.lua;
-
-  extraPackages = [
-    pkgs.tree-sitter # nvim-treesitter :TSUpdate
-    pkgs.nixd # nvim-lspconfig
-    pkgs.nixfmt # conform.nvim
-    pkgs.stylua # conform.nvim
-  ];
 
   # Capitalized :w/:q variants.
   keymaps =

@@ -11,6 +11,7 @@
       ./editing.nix
       ./project.nix
       ./windows.nix
+      ./languages.nix
     ];
   };
 }
