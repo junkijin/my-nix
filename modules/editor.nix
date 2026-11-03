@@ -224,6 +224,7 @@
     # Plain Lua scripts with no plugin dependency, sourced from runtimepath `plugin/`.
     extraFiles = {
       "plugin/indent-guides.lua".source = ./dotfiles/nvim/plugin/indent-guides.lua;
+      "plugin/restore-cursor.lua".source = ./dotfiles/nvim/plugin/restore-cursor.lua;
     };
 
     extraPackages = [
