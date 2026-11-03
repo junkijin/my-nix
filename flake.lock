@@ -118,7 +118,41 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "smart-splits": "smart-splits",
+        "smart-splits-backend-ghostty": "smart-splits-backend-ghostty"
+      }
+    },
+    "smart-splits": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793377059,
+        "narHash": "sha256-6gB1vSxJposF5MyuoVcbxkp3tlhkueENSruQWDVEGig=",
+        "owner": "smart-splits-nvim",
+        "repo": "smart-splits.nvim",
+        "rev": "6a03b298635205802ee1d390826f02414a13290d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "smart-splits-nvim",
+        "repo": "smart-splits.nvim",
+        "type": "github"
+      }
+    },
+    "smart-splits-backend-ghostty": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793648799,
+        "narHash": "sha256-euFBc0yQNyaDrRhl3vQKZtduI7fnBj/xh2POfCe6IQw=",
+        "owner": "smart-splits-nvim",
+        "repo": "backend-ghostty",
+        "rev": "6943639810ada83a52cc412bc3f28d19ace39a32",
+        "type": "github"
+      },
+      "original": {
+        "owner": "smart-splits-nvim",
+        "repo": "backend-ghostty",
+        "type": "github"
       }
     },
     "systems": {

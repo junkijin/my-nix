@@ -5,6 +5,17 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixvim.url = "github:nix-community/nixvim";
 
+    # Neovim plugin sources added to nixvim's Nixpkgs via `nixpkgs.overlays`
+    # (modules/editor/windows.nix).
+    smart-splits = {
+      url = "github:smart-splits-nvim/smart-splits.nvim";
+      flake = false;
+    };
+    smart-splits-backend-ghostty = {
+      url = "github:smart-splits-nvim/backend-ghostty";
+      flake = false;
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
