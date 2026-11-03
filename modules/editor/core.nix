@@ -27,8 +27,6 @@
   extraFiles."plugin/restore-cursor.lua".source = ./plugin/restore-cursor.lua;
 
   extraPackages = [
-    pkgs.fzf # fzf-lua
-    pkgs.ripgrep # fzf-lua live_grep, grepprg
     pkgs.tree-sitter # nvim-treesitter :TSUpdate
     pkgs.nixd # nvim-lspconfig
     pkgs.nixfmt # conform.nvim
