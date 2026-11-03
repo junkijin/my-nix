@@ -201,6 +201,21 @@
       }
       {
         mode = "n";
+        key = "]t";
+        action = "<Cmd>tabn<CR>";
+      }
+      {
+        mode = "n";
+        key = "[t";
+        action = "<Cmd>tabp<CR>";
+      }
+      {
+        mode = "n";
+        key = "<ESC>";
+        action = "<Cmd>noh<CR>";
+      }
+      {
+        mode = "n";
         key = "-";
         action = "<cmd>Oil<cr>";
       }
