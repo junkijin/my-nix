@@ -8,9 +8,51 @@
     vimAlias = true;
     vimdiffAlias = true;
 
+    luaLoader.enable = true;
+
+    # Must precede every `<leader>` mapping, including the ones plugins define.
+    globals.mapleader = " ";
+
+    clipboard.register = "unnamedplus";
+
     opts = {
+      # Appearance
       termguicolors = true;
       background = "dark";
+      number = true;
+      signcolumn = "number";
+      colorcolumn = "+0";
+      scrolloff = 3;
+      pumheight = 10;
+      visualbell = true;
+
+      # Statusline, tabline, title
+      laststatus = 3;
+      showtabline = 0;
+      title = true;
+      titlestring = ''%t%( %M%)%( (%{expand("%:~:.:h")})%)'';
+
+      # Windows
+      splitright = true;
+
+      # Indentation
+      tabstop = 4;
+      shiftwidth = 4;
+
+      # Search
+      ignorecase = true;
+      smartcase = true;
+      grepprg = "rg --vimgrep";
+      grepformat = "%f:%l:%c:%m";
+
+      # Folding
+      foldlevel = 99;
+      foldlevelstart = 99;
+
+      # Files
+      swapfile = false;
+      writebackup = false;
+      updatetime = 256;
     };
 
     colorschemes.gruvbox-material = {
