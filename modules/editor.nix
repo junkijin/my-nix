@@ -145,6 +145,61 @@
 
     keymaps = [
       {
+        mode = "ca";
+        key = "W";
+        action = "w";
+      }
+      {
+        mode = "ca";
+        key = "Q";
+        action = "q";
+      }
+      {
+        mode = "ca";
+        key = "Wq";
+        action = "wq";
+      }
+      {
+        mode = "ca";
+        key = "wQ";
+        action = "wq";
+      }
+      {
+        mode = "ca";
+        key = "WQ";
+        action = "wq";
+      }
+      {
+        mode = "ca";
+        key = "Wa";
+        action = "wa";
+      }
+      {
+        mode = "ca";
+        key = "wA";
+        action = "wa";
+      }
+      {
+        mode = "ca";
+        key = "WA";
+        action = "wa";
+      }
+      {
+        mode = "ca";
+        key = "Qa";
+        action = "qa";
+      }
+      {
+        mode = "ca";
+        key = "qA";
+        action = "qa";
+      }
+      {
+        mode = "ca";
+        key = "QA";
+        action = "qa";
+      }
+      {
         mode = "n";
         key = "-";
         action = "<cmd>Oil<cr>";
