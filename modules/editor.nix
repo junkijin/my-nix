@@ -89,6 +89,8 @@
       };
     };
 
+    plugins.web-devicons.enable = true;
+
     extraPackages = [
       pkgs.fzf # fzf-lua
       pkgs.ripgrep # fzf-lua live_grep, grepprg
