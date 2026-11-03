@@ -1,12 +1,11 @@
 { pkgs, ... }:
 
 {
-  xdg.configFile."nvim".source = ./dotfiles/neovim;
-
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
-    sideloadInitLua = true;
-    defaultEditor = true;
+
+    colorschemes.gruvbox.enable = true;
+
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
