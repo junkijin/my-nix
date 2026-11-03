@@ -88,15 +88,19 @@ in
     nixd.enable = true;
     eslint = {
       enable = true;
+      package = null;
     };
     gopls = {
       enable = true;
+      package = null;
     };
     zls = {
       enable = true;
+      package = null;
     };
     oxlint = {
       enable = true;
+      package = null;
       # Prefer the project-local oxlint, fall back to the one on PATH.
       config.cmd.__raw = ''
         function(dispatchers, config)
@@ -118,6 +122,7 @@ in
     };
     tailwindcss = {
       enable = true;
+      package = null;
       config.settings.tailwindCSS.classFunctions = [
         "cva"
         "cx"
@@ -126,6 +131,7 @@ in
     };
     vtsls = {
       enable = true;
+      package = null;
       config.settings = {
         javascript.updateImportsOnFileMove.enabled = "always";
         typescript = {
