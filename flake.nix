@@ -1,6 +1,4 @@
 {
-  description = "Junki's nix-darwin system flake";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixvim.url = "github:nix-community/nixvim";
