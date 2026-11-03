@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules/ai.nix
+    ./modules/ai
     ./modules/editor
     ./modules/fonts.nix
     ./modules/shell.nix
