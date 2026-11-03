@@ -3,7 +3,7 @@
 {
   imports = [
     ./modules/ai.nix
-    ./modules/editor.nix
+    ./modules/editor
     ./modules/fonts.nix
     ./modules/shell.nix
     ./modules/terminal.nix
