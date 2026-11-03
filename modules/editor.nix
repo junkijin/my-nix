@@ -221,6 +221,11 @@
       }
     ];
 
+    # Plain Lua scripts with no plugin dependency, sourced from runtimepath `plugin/`.
+    extraFiles = {
+      "plugin/indent-guides.lua".source = ./dotfiles/nvim/plugin/indent-guides.lua;
+    };
+
     extraPackages = [
       pkgs.fzf # fzf-lua
       pkgs.ripgrep # fzf-lua live_grep, grepprg
