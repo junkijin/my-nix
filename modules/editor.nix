@@ -4,7 +4,22 @@
   programs.nixvim = {
     enable = true;
 
-    colorschemes.gruvbox.enable = true;
+    opts = {
+      termguicolors = true;
+      background = "dark";
+    };
+
+    colorschemes.gruvbox-material = {
+      enable = true;
+      settings = {
+        foreground = "original";
+        background = "medium";
+        enable_bold = 1;
+        enable_italic = 1;
+      };
+    };
+
+    highlightOverride.BqfPreviewBorder.link = "Ignore";
 
     viAlias = true;
     vimAlias = true;
