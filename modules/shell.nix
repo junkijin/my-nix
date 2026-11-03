@@ -29,5 +29,11 @@
     ];
   };
 
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.nix-your-shell.enable = true;
 }
