@@ -102,5 +102,14 @@ in
   # Plain Lua scripts with no plugin dependency, sourced from runtimepath `plugin/`.
   extraFiles = {
     "plugin/indent-guides.lua".source = ./plugin/indent-guides.lua;
+    "plugin/lsp-progress.lua".source = ./plugin/lsp-progress.lua;
+  };
+
+  diagnostic.settings.signs = false;
+
+  # Neovim enables semantic tokens by default; `activate = false` turns them off.
+  lsp.semanticTokens = {
+    enable = true;
+    activate = false;
   };
 }
