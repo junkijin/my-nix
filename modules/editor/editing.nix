@@ -25,7 +25,7 @@
     ];
   };
 
-  plugins.guess-indent.enable = true;
+  plugins.sleuth.enable = true;
   plugins.nvim-autopairs.enable = true;
   plugins.nvim-surround.enable = true;
   plugins.repeat.enable = true;
