@@ -48,6 +48,7 @@ in
     folding.enable = true;
     grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
       bash
+      c
       css
       diff
       git_config
@@ -86,6 +87,11 @@ in
   # Each server installs its nixpkgs binary.
   lsp.servers = {
     nixd.enable = true;
+    # Apple's clangd (Command Line Tools) knows the macOS SDK include paths.
+    clangd = {
+      enable = true;
+      package = null;
+    };
     eslint = {
       enable = true;
       package = null;
@@ -150,9 +156,15 @@ in
   plugins.conform-nvim = {
     enable = true;
     # Installs every formatter listed in `formatters_by_ft` from nixpkgs.
-    autoInstall.enable = true;
+    autoInstall = {
+      enable = true;
+      # Use Apple's clang-format via xcrun; nixpkgs clang-tools would also put
+      # its clangd ahead of Apple's on nvim's PATH.
+      overrides.clang_format = null;
+    };
     settings = {
       formatters_by_ft = {
+        c = [ "clang_format" ];
         lua = [ "stylua" ];
         nix = [ "nixfmt" ];
         javascript = jsFormatterSpec;
@@ -161,6 +173,11 @@ in
         typescriptreact = jsFormatterSpec;
       };
       formatters = {
+        clang_format = {
+          command = "xcrun";
+          prepend_args = [ "clang-format" ];
+          condition.__raw = ''require("conform.util").root_file({ ".clang-format", "_clang-format" })'';
+        };
         oxfmt.condition.__raw = ''require("conform.util").root_file(${toLuaObject oxfmtRootFiles})'';
         prettier.condition.__raw = ''require("conform.util").root_file(${toLuaObject prettierRootFiles})'';
       };
