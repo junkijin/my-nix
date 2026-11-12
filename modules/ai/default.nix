@@ -9,8 +9,13 @@
 
       # Model
       defaultProvider = "anthropic";
-      defaultModel = "claude-opus-5-5";
-      defaultThinkingLevel = "medium";
+      defaultModel = "claude-fable-5-2";
+      defaultThinkingLevel = "high";
+      enabledModels = [
+        "anthropic/claude-fable-5-2:high"
+        "anthropic/claude-opus-5-5:medium"
+        "xai/grok-4.7:high"
+      ];
 
       # TUI
       theme = "gruvbox-dark-medium";
